@@ -232,7 +232,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2071516014}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &795701441
 BoxCollider:
@@ -290,7 +290,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 3}
+  m_Size: {x: 0.5, y: 0.5, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &856785283
 MonoBehaviour:
@@ -401,6 +401,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!4 &1387736350 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 719937c714df59a49b40fca7a6cae6dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1894378092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1430887552
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,10 +643,11 @@ MonoBehaviour:
   hand: {fileID: 795701439}
   currentPickup: {fileID: 0}
   jumpForce: 10
-  fallMult: 1.5
-  lowJumpMult: 1
-  moveSpeed: 20
+  fallMult: 2.5
+  lowJumpMult: 2
+  moveSpeed: 25
   drag: 0.95
+  speed: 0
 --- !u!54 &1624225488
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -687,6 +694,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1894378092
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2071516014}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_Name
+      value: FPC_LO
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ed577f018310e1c498d16eac504b6321, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
 --- !u!1 &1897443880
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,7 +904,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 35
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -862,6 +934,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 856785281}
+  - {fileID: 1387736350}
   - {fileID: 795701440}
   m_Father: {fileID: 1897443881}
   m_RootOrder: 0
@@ -1016,7 +1089,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 3895
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}

@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     bool isMoving;
     float inputX;
     float inputY;
+    [SerializeField]
+    float speed;
 
     // Use this for initialization
     void Start()
@@ -49,15 +51,19 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
-        if (currentPickup == null && Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && pickupCheck.isColliding && currentPickup == null)
         {
             currentPickup = pickupCheck.collidedWith.GetComponent<Rigidbody>();
             currentPickup.transform.position = hand.transform.position;
             currentPickup.transform.parent = hand.transform;
-            currentPickup.useGravity = false;
+            currentPickup.isKinematic = true;
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0) && currentPickup != null)
+        {
+            currentPickup.isKinematic = false;
+            currentPickup.transform.parent = null;                                          
             currentPickup = null;
+        }
     }
 
     void FixedUpdate()
@@ -67,7 +73,8 @@ public class PlayerController : MonoBehaviour
             Vector3 camDir = new Vector3(inputX, 0, inputY);
 
             Vector3 force = Vector3.ProjectOnPlane(Camera.main.transform.right, Vector3.up).normalized * inputX + Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up).normalized * inputY;
-            rb.AddForce(force * moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
+            force = Vector3.ClampMagnitude(force * moveSpeed, moveSpeed) * Time.deltaTime;
+            rb.AddForce(force, ForceMode.VelocityChange);
         }
 
         if (rb.velocity.y < 0)
@@ -79,5 +86,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * Physics.gravity.y * (lowJumpMult - 1) * Time.deltaTime, ForceMode.VelocityChange);
         }
         rb.velocity *= drag;
+
+        speed = rb.velocity.magnitude;
     }
 }
