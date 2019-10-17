@@ -49,15 +49,19 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
-        if (currentPickup == null && Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && pickupCheck.isColliding && currentPickup == null)
         {
             currentPickup = pickupCheck.collidedWith.GetComponent<Rigidbody>();
             currentPickup.transform.position = hand.transform.position;
             currentPickup.transform.parent = hand.transform;
-            currentPickup.useGravity = false;
+            currentPickup.isKinematic = true;
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0) && currentPickup != null)
+        {
+            currentPickup.isKinematic = false;
+            currentPickup.transform.parent = null;
             currentPickup = null;
+        }
     }
 
     void FixedUpdate()
