@@ -643,10 +643,11 @@ MonoBehaviour:
   hand: {fileID: 795701439}
   currentPickup: {fileID: 0}
   jumpForce: 10
-  fallMult: 1.5
-  lowJumpMult: 1
-  moveSpeed: 20
+  fallMult: 2.5
+  lowJumpMult: 2
+  moveSpeed: 25
   drag: 0.95
+  speed: 0
 --- !u!54 &1624225488
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -703,6 +704,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
       propertyPath: m_Name
       value: FPC_LO
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 719937c714df59a49b40fca7a6cae6dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1084,7 +1089,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 3895
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
