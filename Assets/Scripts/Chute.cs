@@ -5,11 +5,12 @@ using UnityEngine;
 public class Chute : MonoBehaviour
 {
     public SpawnManager spawnManager;
+    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -20,12 +21,14 @@ public class Chute : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Debris")
+        if(other.CompareTag("Debris"))
         {
             //activate effects
 
             //decrement DebrisCount
             spawnManager.DebrisCount--;
+            //add score
+            gameManager.Score++;
 
             //delete other object
             Destroy(other.gameObject);

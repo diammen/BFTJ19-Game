@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float fallMult;
     public float lowJumpMult;
-    public float moveSpeed;
-    public float drag;
+    public float maxSpeed;
+    public float acceleration;
 
 
 
@@ -56,12 +56,15 @@ public class PlayerController : MonoBehaviour
             currentPickup = pickupCheck.collidedWith.GetComponent<Rigidbody>();
             currentPickup.transform.position = hand.transform.position;
             currentPickup.transform.parent = hand.transform;
+            currentPickup.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
             currentPickup.isKinematic = true;
         }
         else if (Input.GetMouseButtonUp(0) && currentPickup != null)
         {
             currentPickup.isKinematic = false;
-            currentPickup.transform.parent = null;                                          
+            currentPickup.collisionDetectionMode = CollisionDetectionMode.Continuous;
+            currentPickup.transform.parent = null;
+            currentPickup.AddForce(Camera.main.transform.forward * 15, ForceMode.Impulse);
             currentPickup = null;
         }
     }
@@ -73,8 +76,8 @@ public class PlayerController : MonoBehaviour
             Vector3 camDir = new Vector3(inputX, 0, inputY);
 
             Vector3 force = Vector3.ProjectOnPlane(Camera.main.transform.right, Vector3.up).normalized * inputX + Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up).normalized * inputY;
-            force = Vector3.ClampMagnitude(force * moveSpeed, moveSpeed) * Time.deltaTime;
-            rb.AddForce(force, ForceMode.VelocityChange);
+            force = Vector3.ClampMagnitude(force * acceleration * Time.deltaTime, maxSpeed);
+            rb.MovePosition(rb.position + force);
         }
 
         if (rb.velocity.y < 0)
@@ -85,7 +88,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * Physics.gravity.y * (lowJumpMult - 1) * Time.deltaTime, ForceMode.VelocityChange);
         }
-        rb.velocity *= drag;
 
         speed = rb.velocity.magnitude;
     }

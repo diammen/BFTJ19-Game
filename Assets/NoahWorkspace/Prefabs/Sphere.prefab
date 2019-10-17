@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7243896792814113554}
   - component: {fileID: 5642152375727186217}
   - component: {fileID: 7272876821351490339}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Debris
   m_Icon: {fileID: 0}

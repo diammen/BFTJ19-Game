@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5705660225578552979}
   - component: {fileID: 6538482969142069124}
   - component: {fileID: 193461738933603709}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Debris
   m_Icon: {fileID: 0}
