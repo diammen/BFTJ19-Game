@@ -5,13 +5,16 @@ using UnityEngine;
 public class TriggerCheck : MonoBehaviour
 {
     public LayerMask layerMask;
+    public GameObject collidedWith;
     public bool isColliding;
+    public bool getObject;
 
     private void OnTriggerEnter(Collider other)
     {
         if (layerMask == (layerMask | 1 << other.gameObject.layer))
         {
             isColliding = true;
+            if (getObject) collidedWith = other.gameObject;
         }
     }
 

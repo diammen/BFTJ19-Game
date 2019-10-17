@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public TriggerCheck groundCheck;
+    public TriggerCheck pickupCheck;
+    public GameObject hand;
+    public Rigidbody currentPickup;
     public float jumpForce;
     public float fallMult;
     public float lowJumpMult;
     public float moveSpeed;
     public float drag;
+
 
 
     Rigidbody rb;
@@ -21,6 +25,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -42,6 +48,16 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+
+        if (currentPickup == null && Input.GetMouseButtonUp(0))
+        {
+            currentPickup = pickupCheck.collidedWith.GetComponent<Rigidbody>();
+            currentPickup.transform.position = hand.transform.position;
+            currentPickup.transform.parent = hand.transform;
+            currentPickup.useGravity = false;
+        }
+        else if (Input.GetMouseButtonUp(0))
+            currentPickup = null;
     }
 
     void FixedUpdate()
