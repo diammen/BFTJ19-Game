@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float fallMult;
     public float lowJumpMult;
     public float moveSpeed;
+    public float drag;
 
 
     Rigidbody rb;
@@ -47,16 +48,20 @@ public class PlayerController : MonoBehaviour
     {
         if (isMoving)
         {
-            Vector3 force = new Vector3(inputX, 0, inputY) * moveSpeed;
-            rb.AddForce(force * Time.deltaTime, ForceMode.Impulse);
+            Vector3 camDir = new Vector3(inputX, 0, inputY);
+
+            Vector3 force = Vector3.ProjectOnPlane(Camera.main.transform.right, Vector3.up).normalized * inputX + Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up).normalized * inputY;
+            rb.AddForce(force * moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
         }
+
         if (rb.velocity.y < 0)
         {
-            rb.AddForce(Vector3.up * Physics.gravity.y * (fallMult - 1) * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * Physics.gravity.y * (fallMult - 1) * Time.deltaTime, ForceMode.VelocityChange);
         }
         else if (rb.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
         {
-            rb.AddForce(Vector3.up * Physics.gravity.y * (lowJumpMult - 1) * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * Physics.gravity.y * (lowJumpMult - 1) * Time.deltaTime, ForceMode.VelocityChange);
         }
+        rb.velocity *= drag;
     }
 }
