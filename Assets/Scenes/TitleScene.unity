@@ -2861,6 +2861,16 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3064149688302783621, guid: 6f14497f3a127d64fbb4d22df4285793,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064149688302783621, guid: 6f14497f3a127d64fbb4d22df4285793,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f14497f3a127d64fbb4d22df4285793, type: 3}
 --- !u!1 &3064149689382801414 stripped
