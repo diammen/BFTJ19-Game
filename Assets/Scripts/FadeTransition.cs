@@ -20,12 +20,14 @@ public class FadeTransition : MonoBehaviour
         canvas = GetComponent<CanvasGroup>();
 
         gm.fade = this;
+
+        DoFade(false);
     }
 
-    public void DoFade()
+    public void DoFade(bool isFadingOut)
     {
         isFading = true;
-        StartCoroutine(Fade(duration, true));
+        StartCoroutine(Fade(duration, isFadingOut));
     }
 
     IEnumerator Fade(float _duration, bool fadingOut)

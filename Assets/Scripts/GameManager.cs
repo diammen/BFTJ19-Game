@@ -28,19 +28,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         fade = GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeTransition>();
-        SceneManager.sceneLoaded += OnLevelLoaded;
 
         if (instance == null)
             instance = this;
         else
             Destroy(gameObject);
-    }
-
-    private void OnLevelLoaded(Scene scene, LoadSceneMode mode)
-    {
-        var searchObject = GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeTransition>();
-        if (searchObject != null)
-            fade = searchObject.GetComponent<FadeTransition>();
     }
 
     public void Quit()
@@ -52,7 +44,7 @@ public class GameManager : MonoBehaviour
     {
         if (!fade.isFading)
         {
-            fade.DoFade();
+            fade.DoFade(true);
             fade.onFadeCompleted.AddListener(GoToScene);
             TargetScene = newTargetScene;
         }
