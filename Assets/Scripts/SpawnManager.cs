@@ -54,7 +54,7 @@ public class SpawnManager : MonoBehaviour
                 spawners[ActiveSpawners].enabled = true;
                 activeSpawners++;
                 activationTimer += activationTimeCurrent;
-                activationTimeCurrent += activationTimeBase * activeSpawners * activationTimeMultiplier;
+                activationTimeCurrent = activationTimeBase * (float)Math.Pow(activationTimeMultiplier, activeSpawners);
             }
             activationTimer -= Time.deltaTime;
         }
