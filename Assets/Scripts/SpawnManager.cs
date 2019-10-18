@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    PlayerController player;
+    CameraControl cameraControl;
+    GameManager gameManager;
+    [SerializeField] TextMeshProUGUI loseText;
+
     [SerializeField] private float activationTimer = 4;
     [SerializeField] private float activationTime = 30;
     [SerializeField] private int activeSpawners = 0;
@@ -39,6 +45,9 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         spawners = GetComponentsInChildren<Spawner>(true);
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        cameraControl = Camera.main.GetComponent<CameraControl>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -58,7 +67,20 @@ public class SpawnManager : MonoBehaviour
 
     private void Lose()
     {
-        
+        for (int i = 0; i < spawners.Length; i++)
+        {
+            spawners[i].enabled = false;
+            activeSpawners = 0;
+        }
+        player.enabled = false;
+        cameraControl.enabled = false;
+        loseText.enabled = true;
+        StartCoroutine(CountdownToSceneTransition(3));
     }
 
+    private IEnumerator CountdownToSceneTransition(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        gameManager.GoToMainMenu();
+    }
 }

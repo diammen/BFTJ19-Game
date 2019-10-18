@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI ScoreText;
     public string MainScene;
+    public string MainMenuScene;
 
     int score;
 
@@ -25,10 +26,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        var searchObject = GameObject.FindGameObjectWithTag("Score");
+        if (searchObject != null)
+            ScoreText = searchObject.GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -45,5 +53,10 @@ public class GameManager : MonoBehaviour
     public void GoToMainScene()
     {
         SceneManager.LoadScene(MainScene);
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(MainMenuScene);
     }
 }
