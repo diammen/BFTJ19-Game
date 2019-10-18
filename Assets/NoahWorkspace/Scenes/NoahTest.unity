@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -905,6 +905,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937206149980477288, guid: 32e7ef8b20e3bbd4a9eecdde8030ef6a,
+        type: 3}
+      propertyPath: activationTimeMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937206149980477288, guid: 32e7ef8b20e3bbd4a9eecdde8030ef6a,
+        type: 3}
+      propertyPath: activationTimeBase
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8937206149980477287, guid: 32e7ef8b20e3bbd4a9eecdde8030ef6a,
         type: 3}
