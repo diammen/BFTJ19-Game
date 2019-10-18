@@ -12,11 +12,12 @@ public class SoundOnCollide : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(rb.velocity.magnitude >= requiredVelocity)
+        if (audioSource != null && audioSource.clip != null && rb.velocity.magnitude >= requiredVelocity)
         {
             audioSource.Play();
         }
