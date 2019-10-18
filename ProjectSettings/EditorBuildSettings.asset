@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MarcelScene.unity
     guid: fa43826740ed7aa4d89665c51395c3f1
+  - enabled: 1
+    path: Assets/Scenes/FinalScene.unity
+    guid: 438172058bc64ae43b57cfcf7ba4a95e
   m_configObjects: {}

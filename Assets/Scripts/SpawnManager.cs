@@ -28,10 +28,11 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    public TextMeshProUGUI loseText;
+
     PlayerController player;
     CameraControl cameraControl;
     GameManager gameManager;
-    [SerializeField] TextMeshProUGUI loseText;
 
     [SerializeField] private float activationTimer = 4;
     [SerializeField] private float activationTimeBase = 30;
@@ -46,6 +47,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        activationTimeCurrent = activationTimeBase;
         spawners = GetComponentsInChildren<Spawner>(true);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         cameraControl = Camera.main.GetComponent<CameraControl>();
@@ -70,11 +72,6 @@ public class SpawnManager : MonoBehaviour
 
     private void Lose()
     {
-        for (int i = 0; i < spawners.Length; i++)
-        {
-            spawners[i].enabled = false;
-            activeSpawners = 0;
-        }
         player.enabled = false;
         cameraControl.enabled = false;
         loseText.enabled = true;
@@ -84,6 +81,6 @@ public class SpawnManager : MonoBehaviour
     private IEnumerator CountdownToSceneTransition(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        gameManager.GoToMainMenu();
+        gameManager.StartTransition("MainMenu");
     }
 }

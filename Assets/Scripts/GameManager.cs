@@ -7,10 +7,17 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public FadeTransition fade;
     public string MainScene;
     public string MainMenuScene;
 
-    FadeTransition fade;
+    bool fading;
+    string TargetScene;
+
+    delegate void SceneMethod();
+    SceneMethod methodToCall;
+
+    static GameManager instance;
 
     private void Awake()
     {
@@ -20,18 +27,20 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fade = GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeTransition>();
+        SceneManager.sceneLoaded += OnLevelLoaded;
 
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnLevelLoaded(Scene scene, LoadSceneMode mode)
     {
-        
-    }
-
-    private void OnLevelLoaded()
-    {
-        
+        var searchObject = GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeTransition>();
+        if (searchObject != null)
+            fade = searchObject.GetComponent<FadeTransition>();
     }
 
     public void Quit()
@@ -39,9 +48,19 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void GoToMainScene()
+    public void StartTransition(string newTargetScene)
     {
-        SceneManager.LoadScene(MainScene);
+        if (!fade.isFading)
+        {
+            fade.DoFade();
+            fade.onFadeCompleted.AddListener(GoToScene);
+            TargetScene = newTargetScene;
+        }
+    }
+
+    public void GoToScene()
+    {
+        SceneManager.LoadScene(TargetScene);
     }
 
     public void GoToMainMenu()

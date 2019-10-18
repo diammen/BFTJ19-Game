@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8303816075353927004}
   - component: {fileID: 8303816075352632700}
   - component: {fileID: 8303816075351633852}
+  - component: {fileID: 7737235383855658390}
   m_Layer: 0
   m_Name: WindowBeveled
   m_TagString: Untagged
@@ -78,3 +79,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7737235383855658390
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8303816075353633148}
+  m_Material: {fileID: 13400000, guid: 5650e1ef609dc7441abe62bf7c99c6cc, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1954232, y: 0.08115374, z: 0.59914917}
+  m_Center: {x: -0.59771174, y: 0.04057687, z: -0.29957464}
