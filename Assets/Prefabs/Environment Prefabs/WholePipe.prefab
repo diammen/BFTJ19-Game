@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 6356486194624391164}
   - component: {fileID: 6356486194627782620}
   - component: {fileID: 6356486194626815260}
+  - component: {fileID: 2908847238309104821}
+  - component: {fileID: 3446003638083106842}
+  - component: {fileID: 2644291538439546187}
   m_Layer: 0
   m_Name: WholePipe
   m_TagString: Untagged
@@ -77,3 +80,42 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2908847238309104821
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6356486194624560092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.24322033, y: 2.4864936, z: 0.23979416}
+  m_Center: {x: 0.078116775, y: 1.2432468, z: 0.042943582}
+--- !u!65 &3446003638083106842
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6356486194624560092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18838263, y: 2.4864936, z: 0.23979416}
+  m_Center: {x: -2.808687, y: 1.2432468, z: 0.042943582}
+--- !u!65 &2644291538439546187
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6356486194624560092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.1026053, y: 0.20892715, z: 0.23979416}
+  m_Center: {x: -1.3515756, y: 2.38203, z: 0.042943582}
