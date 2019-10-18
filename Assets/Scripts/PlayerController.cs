@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public TriggerCheck pickupCheck;
     public GameObject hand;
     public Rigidbody currentPickup;
+    public Transform grabTarget;
     public float jumpForce;
     public float fallMult;
     public float lowJumpMult;
@@ -17,16 +18,17 @@ public class PlayerController : MonoBehaviour
 
 
     Rigidbody rb;
+    Animator anim;
     bool isMoving;
+    bool carryingItem;
     float inputX;
     float inputY;
-    [SerializeField]
-    float speed;
 
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -51,13 +53,14 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
-        if (Input.GetMouseButtonUp(0) && pickupCheck.isColliding && currentPickup == null)
+        if (Input.GetMouseButtonUp(0) && pickupCheck.isColliding && currentPickup == null && !carryingItem)
         {
             currentPickup = pickupCheck.collidedWith.GetComponent<Rigidbody>();
             currentPickup.transform.position = hand.transform.position;
             currentPickup.transform.parent = hand.transform;
             currentPickup.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
             currentPickup.isKinematic = true;
+            carryingItem = true;
         }
         else if (Input.GetMouseButtonUp(0) && currentPickup != null)
         {
@@ -66,6 +69,10 @@ public class PlayerController : MonoBehaviour
             currentPickup.transform.parent = null;
             currentPickup.AddForce(Camera.main.transform.forward * 15, ForceMode.Impulse);
             currentPickup = null;
+        }
+        else if (currentPickup == null && carryingItem)
+        {
+            carryingItem = false;
         }
     }
 
@@ -88,7 +95,16 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * Physics.gravity.y * (lowJumpMult - 1) * Time.deltaTime, ForceMode.VelocityChange);
         }
+    }
 
-        speed = rb.velocity.magnitude;
+    private void OnAnimatorIK(int layerIndex)
+    {
+        if (anim)
+        {
+            anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
+            anim.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1);
+            anim.SetIKPosition(AvatarIKGoal.LeftHand, grabTarget.position);
+            anim.SetIKRotation(AvatarIKGoal.LeftHand, Quaternion.LookRotation(grabTarget.position - transform.position));
+        }
     }
 }
