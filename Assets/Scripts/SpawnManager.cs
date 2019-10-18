@@ -28,7 +28,9 @@ public class SpawnManager : MonoBehaviour
     }
 
     [SerializeField] private float activationTimer = 4;
-    [SerializeField] private float activationTime = 30;
+    [SerializeField] private float activationTimeBase = 30;
+    [SerializeField] private float activationTimeCurrent;
+    [SerializeField] private float activationTimeMultiplier = 1;
     [SerializeField] private int activeSpawners = 0;
     private Spawner[] spawners;
 
@@ -38,6 +40,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        activationTimeCurrent = activationTimeBase;
         spawners = GetComponentsInChildren<Spawner>(true);
     }
 
@@ -50,7 +53,8 @@ public class SpawnManager : MonoBehaviour
             {
                 spawners[ActiveSpawners].enabled = true;
                 activeSpawners++;
-                activationTimer += activationTime;
+                activationTimer += activationTimeCurrent;
+                activationTimeCurrent += activationTimeBase * activeSpawners * activationTimeMultiplier;
             }
             activationTimer -= Time.deltaTime;
         }
@@ -60,5 +64,4 @@ public class SpawnManager : MonoBehaviour
     {
         
     }
-
 }
