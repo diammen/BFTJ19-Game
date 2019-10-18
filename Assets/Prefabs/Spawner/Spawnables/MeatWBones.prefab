@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6949868304392545610}
   - component: {fileID: 2794066263515635599}
   - component: {fileID: 558175323158813054}
+  - component: {fileID: 8215701379694934866}
   m_Layer: 10
   m_Name: MeatWBones
   m_TagString: Debris
@@ -223,3 +224,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredVelocity: 0.5
+--- !u!114 &8215701379694934866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186401232713667823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7897c5853a2a63c4bb6858662b9a7425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disolveTime: 0

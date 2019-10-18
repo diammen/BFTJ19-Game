@@ -27,8 +27,8 @@ public class Chute : MonoBehaviour
             //add score
             scoreTracker.Score++;
 
-            //delete other object
-            Destroy(other.gameObject);
+            //disolve other object
+            other.GetComponent<Disolve>().BeginDesolve();
         }
     }
 }

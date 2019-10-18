@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 744053776808477158}
   - component: {fileID: 7865182122476450282}
   - component: {fileID: 7937005511761859817}
+  - component: {fileID: 3974473196875011379}
   m_Layer: 10
   m_Name: FemurBone
   m_TagString: Debris
@@ -220,3 +221,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredVelocity: 0.5
+--- !u!114 &3974473196875011379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2704882597496878330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7897c5853a2a63c4bb6858662b9a7425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disolveTime: 0

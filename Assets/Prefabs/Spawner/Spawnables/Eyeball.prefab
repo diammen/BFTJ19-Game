@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7869461268462770978}
   - component: {fileID: 8103104175442438845}
   - component: {fileID: 4130187290546028945}
+  - component: {fileID: 5974853282027770597}
   m_Layer: 10
   m_Name: Eyeball
   m_TagString: Debris
@@ -220,3 +221,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredVelocity: 0.5
+--- !u!114 &5974853282027770597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001151054244809483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7897c5853a2a63c4bb6858662b9a7425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disolveTime: 0
