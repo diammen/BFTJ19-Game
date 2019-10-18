@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Disolve : MonoBehaviour
 {
-    [SerializeField] private float disolveTime;
+    [SerializeField] private float disolveTime = 3;
 
     private Material mat;
     private bool disolving = false;
 
-    private float timer = 3;
+    private float timer = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        mat = GetComponent<Material>();
+        mat =  GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class Disolve : MonoBehaviour
         if(disolving == true)
         {
             timer += Time.deltaTime;
-            mat.SetFloat("Disolve", timer / disolveTime);
+            mat.SetFloat("Dissolve", timer / disolveTime);
             if(timer >= disolveTime)
             {
                 Destroy(gameObject);

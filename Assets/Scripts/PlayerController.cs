@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Animator anim;
     public TriggerCheck groundCheck;
     public TriggerCheck pickupCheck;
     public GameObject hand;
     public Rigidbody currentPickup;
-    public Transform grabTarget;
     public float jumpForce;
     public float fallMult;
     public float lowJumpMult;
@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
 
 
     Rigidbody rb;
-    Animator anim;
     bool isMoving;
     bool carryingItem;
     float inputX;
@@ -28,7 +27,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -55,20 +54,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && pickupCheck.isColliding && currentPickup == null && !carryingItem)
         {
-            currentPickup = pickupCheck.collidedWith.GetComponent<Rigidbody>();
-            currentPickup.transform.position = hand.transform.position;
-            currentPickup.transform.parent = hand.transform;
-            currentPickup.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
-            currentPickup.isKinematic = true;
-            carryingItem = true;
+            anim.SetTrigger("Grab");
         }
         else if (Input.GetMouseButtonUp(0) && currentPickup != null)
         {
-            currentPickup.isKinematic = false;
-            currentPickup.collisionDetectionMode = CollisionDetectionMode.Continuous;
-            currentPickup.transform.parent = null;
-            currentPickup.AddForce(Camera.main.transform.forward * 15, ForceMode.Impulse);
-            currentPickup = null;
+            anim.SetTrigger("Throw");
         }
         else if (currentPickup == null && carryingItem)
         {
@@ -97,14 +87,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnAnimatorIK(int layerIndex)
+    public void GrabObject()
     {
-        if (anim)
-        {
-            anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
-            anim.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1);
-            anim.SetIKPosition(AvatarIKGoal.LeftHand, grabTarget.position);
-            anim.SetIKRotation(AvatarIKGoal.LeftHand, Quaternion.LookRotation(grabTarget.position - transform.position));
-        }
+        currentPickup = pickupCheck.collidedWith.GetComponent<Rigidbody>();
+        currentPickup.transform.position = hand.transform.position;
+        currentPickup.transform.parent = hand.transform;
+        currentPickup.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+        currentPickup.isKinematic = true;
+        currentPickup.detectCollisions = false;
+        carryingItem = true;
+    }
+
+    public void ThrowObject()
+    {
+        currentPickup.isKinematic = false;
+        currentPickup.detectCollisions = true;
+        currentPickup.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        currentPickup.transform.parent = null;
+        currentPickup.AddForce(Camera.main.transform.forward * 15, ForceMode.Impulse);
+        currentPickup = null;
     }
 }
