@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Disolve : MonoBehaviour
 {
-    [SerializeField] private float disolveTime;
+    [SerializeField] private float disolveTime = 3;
 
     private Material mat;
     private bool disolving = false;
 
-    private float timer = 3;
+    private float timer = 0;
 
     // Start is called before the first frame update
     void Start()
