@@ -1,0 +1,365 @@
+fileFormatVersion: 2
+guid: 8e2252fdc85be8647b6f347a2a679aa0
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: C_Elbow_L
+    100002: C_Elbow_L 1
+    100004: C_Elbow_R
+    100006: C_Elbow_R 1
+    100008: C_Middle_1_L
+    100010: C_Middle_1_L 1
+    100012: C_Middle_1_R
+    100014: C_Middle_1_R 1
+    100016: C_Middle_2_L
+    100018: C_Middle_2_L 1
+    100020: C_Middle_2_R
+    100022: C_Middle_2_R 1
+    100024: C_Middle_3_L
+    100026: C_Middle_3_L 1
+    100028: C_Middle_3_R
+    100030: C_Middle_3_R 1
+    100032: C_Pinky_1_L
+    100034: C_Pinky_1_L 1
+    100036: C_Pinky_1_R
+    100038: C_Pinky_1_R 1
+    100040: C_Pinky_2_L
+    100042: C_Pinky_2_L 1
+    100044: C_Pinky_2_R
+    100046: C_Pinky_2_R 1
+    100048: C_Pinky_3_L
+    100050: C_Pinky_3_L 1
+    100052: C_Pinky_3_R
+    100054: C_Pinky_3_R 1
+    100056: C_Pointer_1_L
+    100058: C_Pointer_1_L 1
+    100060: C_Pointer_1_R
+    100062: C_Pointer_1_R 1
+    100064: C_Pointer_2_L
+    100066: C_Pointer_2_L 1
+    100068: C_Pointer_2_R
+    100070: C_Pointer_2_R 1
+    100072: C_Pointer_3_L
+    100074: C_Pointer_3_L 1
+    100076: C_Pointer_3_R
+    100078: C_Pointer_3_R 1
+    100080: C_Ring_1_L
+    100082: C_Ring_1_L 1
+    100084: C_Ring_1_R
+    100086: C_Ring_1_R 1
+    100088: C_Ring_2_L
+    100090: C_Ring_2_L 1
+    100092: C_Ring_2_R
+    100094: C_Ring_2_R 1
+    100096: C_Ring_3_L
+    100098: C_Ring_3_L 1
+    100100: C_Ring_3_R
+    100102: C_Ring_3_R 1
+    100104: C_Root
+    100106: C_Root 1
+    100108: C_Shoulder_L
+    100110: C_Shoulder_L 1
+    100112: C_Shoulder_R
+    100114: C_Shoulder_R 1
+    100116: C_Thumb_1_L
+    100118: C_Thumb_1_L 1
+    100120: C_Thumb_1_R
+    100122: C_Thumb_1_R 1
+    100124: C_Thumb_2_L
+    100126: C_Thumb_2_L 1
+    100128: C_Thumb_2_R
+    100130: C_Thumb_2_R 1
+    100132: C_Thumb_3_L
+    100134: C_Thumb_3_L 1
+    100136: C_Thumb_3_R
+    100138: C_Thumb_3_R 1
+    100140: C_Wrist_L
+    100142: C_Wrist_L 1
+    100144: C_Wrist_R
+    100146: C_Wrist_R 1
+    100148: Elbow_L
+    100150: Elbow_R
+    100152: //RootNode
+    100154: Middle_1_L
+    100156: Middle_1_R
+    100158: Middle_2_L
+    100160: Middle_2_R
+    100162: Middle_3_L
+    100164: Middle_3_R
+    100166: Middle_L_END
+    100168: Middle_R_END
+    100170: Pinky_1_L
+    100172: Pinky_1_R
+    100174: Pinky_2_L
+    100176: Pinky_2_R
+    100178: Pinky_3_L
+    100180: Pinky_3_R
+    100182: Pinky_L_END
+    100184: Pinky_R_END
+    100186: Pointer_1_L
+    100188: Pointer_1_R
+    100190: Pointer_2_L
+    100192: Pointer_2_R
+    100194: Pointer_3_L
+    100196: Pointer_3_R
+    100198: Pointer_L_END
+    100200: Pointer_R_END
+    100202: Ring_1_L
+    100204: Ring_1_R
+    100206: Ring_2_L
+    100208: Ring_2_R
+    100210: Ring_3_L
+    100212: Ring_3_R
+    100214: Ring_L_END
+    100216: Ring_R_END
+    100218: Root
+    100220: Shoulder_L
+    100222: Shoulder_R
+    100224: Thumb_1_L
+    100226: Thumb_1_R
+    100228: Thumb_2_L
+    100230: Thumb_2_R
+    100232: Thumb_3_L
+    100234: Thumb_3_R
+    100236: Thumb_L_END
+    100238: Thumb_R_END
+    100240: Wrist_L
+    100242: Wrist_R
+    400000: C_Elbow_L
+    400002: C_Elbow_L 1
+    400004: C_Elbow_R
+    400006: C_Elbow_R 1
+    400008: C_Middle_1_L
+    400010: C_Middle_1_L 1
+    400012: C_Middle_1_R
+    400014: C_Middle_1_R 1
+    400016: C_Middle_2_L
+    400018: C_Middle_2_L 1
+    400020: C_Middle_2_R
+    400022: C_Middle_2_R 1
+    400024: C_Middle_3_L
+    400026: C_Middle_3_L 1
+    400028: C_Middle_3_R
+    400030: C_Middle_3_R 1
+    400032: C_Pinky_1_L
+    400034: C_Pinky_1_L 1
+    400036: C_Pinky_1_R
+    400038: C_Pinky_1_R 1
+    400040: C_Pinky_2_L
+    400042: C_Pinky_2_L 1
+    400044: C_Pinky_2_R
+    400046: C_Pinky_2_R 1
+    400048: C_Pinky_3_L
+    400050: C_Pinky_3_L 1
+    400052: C_Pinky_3_R
+    400054: C_Pinky_3_R 1
+    400056: C_Pointer_1_L
+    400058: C_Pointer_1_L 1
+    400060: C_Pointer_1_R
+    400062: C_Pointer_1_R 1
+    400064: C_Pointer_2_L
+    400066: C_Pointer_2_L 1
+    400068: C_Pointer_2_R
+    400070: C_Pointer_2_R 1
+    400072: C_Pointer_3_L
+    400074: C_Pointer_3_L 1
+    400076: C_Pointer_3_R
+    400078: C_Pointer_3_R 1
+    400080: C_Ring_1_L
+    400082: C_Ring_1_L 1
+    400084: C_Ring_1_R
+    400086: C_Ring_1_R 1
+    400088: C_Ring_2_L
+    400090: C_Ring_2_L 1
+    400092: C_Ring_2_R
+    400094: C_Ring_2_R 1
+    400096: C_Ring_3_L
+    400098: C_Ring_3_L 1
+    400100: C_Ring_3_R
+    400102: C_Ring_3_R 1
+    400104: C_Root
+    400106: C_Root 1
+    400108: C_Shoulder_L
+    400110: C_Shoulder_L 1
+    400112: C_Shoulder_R
+    400114: C_Shoulder_R 1
+    400116: C_Thumb_1_L
+    400118: C_Thumb_1_L 1
+    400120: C_Thumb_1_R
+    400122: C_Thumb_1_R 1
+    400124: C_Thumb_2_L
+    400126: C_Thumb_2_L 1
+    400128: C_Thumb_2_R
+    400130: C_Thumb_2_R 1
+    400132: C_Thumb_3_L
+    400134: C_Thumb_3_L 1
+    400136: C_Thumb_3_R
+    400138: C_Thumb_3_R 1
+    400140: C_Wrist_L
+    400142: C_Wrist_L 1
+    400144: C_Wrist_R
+    400146: C_Wrist_R 1
+    400148: Elbow_L
+    400150: Elbow_R
+    400152: //RootNode
+    400154: Middle_1_L
+    400156: Middle_1_R
+    400158: Middle_2_L
+    400160: Middle_2_R
+    400162: Middle_3_L
+    400164: Middle_3_R
+    400166: Middle_L_END
+    400168: Middle_R_END
+    400170: Pinky_1_L
+    400172: Pinky_1_R
+    400174: Pinky_2_L
+    400176: Pinky_2_R
+    400178: Pinky_3_L
+    400180: Pinky_3_R
+    400182: Pinky_L_END
+    400184: Pinky_R_END
+    400186: Pointer_1_L
+    400188: Pointer_1_R
+    400190: Pointer_2_L
+    400192: Pointer_2_R
+    400194: Pointer_3_L
+    400196: Pointer_3_R
+    400198: Pointer_L_END
+    400200: Pointer_R_END
+    400202: Ring_1_L
+    400204: Ring_1_R
+    400206: Ring_2_L
+    400208: Ring_2_R
+    400210: Ring_3_L
+    400212: Ring_3_R
+    400214: Ring_L_END
+    400216: Ring_R_END
+    400218: Root
+    400220: Shoulder_L
+    400222: Shoulder_R
+    400224: Thumb_1_L
+    400226: Thumb_1_R
+    400228: Thumb_2_L
+    400230: Thumb_2_R
+    400232: Thumb_3_L
+    400234: Thumb_3_R
+    400236: Thumb_L_END
+    400238: Thumb_R_END
+    400240: Wrist_L
+    400242: Wrist_R
+    7400000: Carry
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Carry
+      takeName: Take 001
+      firstFrame: 5
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
