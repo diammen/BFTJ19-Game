@@ -47,6 +47,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        activationTimeCurrent = activationTimeBase;
         spawners = GetComponentsInChildren<Spawner>(true);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         cameraControl = Camera.main.GetComponent<CameraControl>();
