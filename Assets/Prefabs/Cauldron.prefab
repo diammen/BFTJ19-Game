@@ -1,31 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &3723311176576992334
-BoxCollider:
+--- !u!114 &2017196662471210436
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3016980690952199341}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 120, y: 20, z: 200}
-  m_Center: {x: 0, y: 100, z: 0}
---- !u!65 &3576174027702732094
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3016980690952199341}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 200, y: 20, z: 120}
-  m_Center: {x: 0, y: 100, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1714939b6e8e1c4186d7ca24197eb3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnManager: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!1 &6210393264324876048
 GameObject:
   m_ObjectHideFlags: 0
@@ -37,6 +25,10 @@ GameObject:
   - component: {fileID: 6210393264324876060}
   - component: {fileID: 6210393264324876051}
   - component: {fileID: 6210393264324876050}
+  - component: {fileID: 329680180207733456}
+  - component: {fileID: 2429486656981387911}
+  - component: {fileID: 6936921315022039128}
+  - component: {fileID: 904117539098178207}
   m_Layer: 0
   m_Name: Cauldron
   m_TagString: Untagged
@@ -104,6 +96,60 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &329680180207733456
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6210393264324876048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: a30b037c5ad4ab34794e54b9b558590b, type: 3}
+--- !u!114 &2429486656981387911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6210393264324876048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1714939b6e8e1c4186d7ca24197eb3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnManager: {fileID: 0}
+  gameManager: {fileID: 0}
+--- !u!65 &6936921315022039128
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6210393264324876048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 200, y: 20, z: 120}
+  m_Center: {x: 0, y: 100, z: 0}
+--- !u!65 &904117539098178207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6210393264324876048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 120, y: 20, z: 200}
+  m_Center: {x: 0, y: 100, z: 0}
 --- !u!1001 &3016980690952165901
 PrefabInstance:
   m_ObjectHideFlags: 0
