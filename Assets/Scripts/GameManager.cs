@@ -7,24 +7,10 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI ScoreText;
     public string MainScene;
     public string MainMenuScene;
 
-    int score;
-
-    public int Score
-    {
-        get
-        {
-            return score;
-        }
-        set
-        {
-            score = value;
-            ScoreText.text = "Score: " + score;
-        }
-    }
+    FadeTransition fade;
 
     private void Awake()
     {
@@ -34,13 +20,16 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var searchObject = GameObject.FindGameObjectWithTag("Score");
-        if (searchObject != null)
-            ScoreText = searchObject.GetComponent<TextMeshProUGUI>();
+
     }
 
     // Update is called once per frame
     void Update()
+    {
+        
+    }
+
+    private void OnLevelLoaded()
     {
         
     }
