@@ -6,7 +6,8 @@ public class Spawner : MonoBehaviour
 {
 
     public GameObject[] spawnPool;
-    public float spawnRate;
+    public float spawnRateMin = 3;
+    public float spawnRateMax = 4;
 
     private float spawnTimer;
     private SpawnManager spawnManager;
@@ -23,7 +24,7 @@ public class Spawner : MonoBehaviour
         if (spawnTimer <= 0)
         {
             Instantiate(spawnPool[Random.Range(0, spawnPool.Length)], transform.position + (Random.insideUnitSphere * 0.2f), Random.rotation);
-            spawnTimer += spawnRate;
+            spawnTimer += Random.Range(spawnRateMin, spawnRateMax);
             spawnManager.DebrisCount++;
         }
         else
