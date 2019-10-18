@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPool:
-  - {fileID: 2240987264522034737, guid: 9b11b5542bc13cf459abf032b25a4686, type: 3}
-  - {fileID: 1673924305324473851, guid: 674d8ead9b6096d438e0347500e4457b, type: 3}
-  - {fileID: 2166757193641448328, guid: 43e40902c5484ce41960f16095ae77f1, type: 3}
-  - {fileID: 5878075759489265778, guid: e6346717d84b85346a991c842498d6af, type: 3}
-  spawnRate: 2
+  - {fileID: 1001151054244809483, guid: bdf2c1bc0926aaf439c28cbff9f345da, type: 3}
+  - {fileID: 2704882597496878330, guid: f795b8c7cc2eb9e40afedf8b875e42dd, type: 3}
+  - {fileID: 4500217414320194112, guid: 003f7c4bcfddb5043a720bd93b98d0be, type: 3}
+  - {fileID: 6186401232713667823, guid: 28f3edc435bc3e341a1ebbe354da9f67, type: 3}
+  - {fileID: 9055713106186569024, guid: 498a46049fdf9384c9ed44e5cb5616a9, type: 3}
+  spawnRateMin: 3
+  spawnRateMax: 4
