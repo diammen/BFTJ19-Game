@@ -7,10 +7,13 @@ public class Chute : MonoBehaviour
     public SpawnManager spawnManager;
     public GameManager gameManager;
 
+    ScoreTracker scoreTracker;
+
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        scoreTracker = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreTracker>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,7 +25,7 @@ public class Chute : MonoBehaviour
             //decrement DebrisCount
             spawnManager.DebrisCount--;
             //add score
-            gameManager.Score++;
+            scoreTracker.Score++;
 
             //delete other object
             Destroy(other.gameObject);
