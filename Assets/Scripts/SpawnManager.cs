@@ -27,6 +27,10 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    PlayerController player;
+    CameraControl cameraControl;
+    GameManager gameManager;
+
     [SerializeField] private float activationTimer = 4;
     [SerializeField] private float activationTimeBase = 30;
     [SerializeField] private float activationTimeCurrent;
@@ -42,6 +46,9 @@ public class SpawnManager : MonoBehaviour
     {
         activationTimeCurrent = activationTimeBase;
         spawners = GetComponentsInChildren<Spawner>(true);
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        cameraControl = Camera.main.GetComponent<CameraControl>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -62,6 +69,21 @@ public class SpawnManager : MonoBehaviour
 
     private void Lose()
     {
-        
+        foreach(var spawner in spawners)
+        {
+            spawner.enabled = false;
+        }
+        activeSpawners = 0;
+
+        player.enabled = false;
+        cameraControl.enabled = false;
+
+        StartCoroutine(WaitToTransition(3));
+    }
+
+    private IEnumerator WaitToTransition(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        gameManager.GoToMainMenu();
     }
 }
