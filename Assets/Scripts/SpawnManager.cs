@@ -74,13 +74,14 @@ public class SpawnManager : MonoBehaviour
     {
         player.enabled = false;
         cameraControl.enabled = false;
-        loseText.enabled = true;
-        StartCoroutine(CountdownToSceneTransition(3));
+        StartCoroutine(CountdownToSceneTransition(3f));
     }
 
     private IEnumerator CountdownToSceneTransition(float waitTime)
     {
+        gameManager.fade.DoFade(true);
+        loseText.gameObject.SetActive(true);
         yield return new WaitForSeconds(waitTime);
-        gameManager.StartTransition("MainMenu");
+        gameManager.GoToMainMenu();
     }
 }
