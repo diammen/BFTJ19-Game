@@ -34,7 +34,9 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI loseText;
 
     [SerializeField] private float activationTimer = 4;
-    [SerializeField] private float activationTime = 30;
+    [SerializeField] private float activationTimeBase = 30;
+    [SerializeField] private float activationTimeCurrent;
+    [SerializeField] private float activationTimeMultiplier = 1;
     [SerializeField] private int activeSpawners = 0;
     private Spawner[] spawners;
 
@@ -59,7 +61,8 @@ public class SpawnManager : MonoBehaviour
             {
                 spawners[ActiveSpawners].enabled = true;
                 activeSpawners++;
-                activationTimer += activationTime;
+                activationTimer += activationTimeCurrent;
+                activationTimeCurrent = activationTimeBase * (float)Math.Pow(activationTimeMultiplier, activeSpawners);
             }
             activationTimer -= Time.deltaTime;
         }
