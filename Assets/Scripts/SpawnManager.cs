@@ -46,6 +46,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        activationTimeCurrent = activationTimeBase;
         spawners = GetComponentsInChildren<Spawner>(true);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         cameraControl = Camera.main.GetComponent<CameraControl>();
@@ -70,11 +71,6 @@ public class SpawnManager : MonoBehaviour
 
     private void Lose()
     {
-        for (int i = 0; i < spawners.Length; i++)
-        {
-            spawners[i].enabled = false;
-            activeSpawners = 0;
-        }
         player.enabled = false;
         cameraControl.enabled = false;
         loseText.enabled = true;
