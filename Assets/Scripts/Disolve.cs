@@ -14,7 +14,7 @@ public class Disolve : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mat = GetComponent<Material>();
+        mat =  GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class Disolve : MonoBehaviour
         if(disolving == true)
         {
             timer += Time.deltaTime;
-            mat.SetFloat("Disolve", timer / disolveTime);
+            mat.SetFloat("Dissolve", timer / disolveTime);
             if(timer >= disolveTime)
             {
                 Destroy(gameObject);
