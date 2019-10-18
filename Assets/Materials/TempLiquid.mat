@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TempLiquid
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: 4800000, guid: f1cf21787f24fe74bb404e8fad24f84d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -44,6 +44,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_D6CE2984: 5
+    - Vector1_FEBD114F: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -63,6 +65,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_63D646F9: {r: 0.11886381, g: 1, b: 0.0047169924, a: 0}
+    - Color_8704C5AC: {r: 0.5148986, g: 1, b: 0.43867922, a: 0}
     - _Color: {r: 0.3365242, g: 0.8113208, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
